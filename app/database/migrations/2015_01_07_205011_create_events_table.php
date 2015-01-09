@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateComments extends Migration {
+class CreateEventsTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,13 +12,14 @@ class CreateComments extends Migration {
 	 */
 	public function up()
 	{
-		// Create the comments table
-		Schema::create('comments', function($table) 
+		// Create the events table
+		Schema::create('holidays', function($table)
 		{
 			$table->increments('id');
-			$table->string('text', 160);
-			$table->integer('holiday_id')->unsigned();
-			$table->foreign('holiday_id')->references('id')->on('holidays');
+			$table->string('title', 128);
+			$table->string('location', 128);
+			$table->dateTime('when');
+			$table->string('description', 160);
 			$table->integer('user_id')->unsigned();
 			$table->foreign('user_id')->references('id')->on('users');
 			$table->timestamps();
@@ -32,7 +33,7 @@ class CreateComments extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('comments');
+		Schema::drop('holidays');
 	}
 
 }

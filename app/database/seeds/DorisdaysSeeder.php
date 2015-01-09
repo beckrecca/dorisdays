@@ -15,8 +15,15 @@ class DorisdaysSeeder extends Seeder {
 		$me->username = "Becky";
 		$me->email = "rebecca.doris42@gmail.com";
 		$me->DOB = "1988-01-29";
-		$me->password = Hash::make("password1234");
+		$me->password = '$2y$10$99qTQquOGDEqsELw4T9COuOrdl6oPkI7AmHOdJ2jE4IAchs5HEyIS';
 		$me->save();
+
+		$dad = new User;
+		$dad->username = "Kdoris";
+		$dad->email = "Kevindoris9@gmail.com";
+		$dad->DOB = "1947-05-29";
+		$dad->password = '$2y$10$CASrhTPzsT9LaI0MtHQdAeP265KbpZGNhIQ9MGhZkdDuhcugKQp6K';
+		$dad->save();
 
 		# Events
 		$example = new Holiday;

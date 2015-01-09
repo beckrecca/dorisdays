@@ -8,7 +8,7 @@
 
 	<h4> {{ $header }} </h4>
 
-	@if (isset($events))
+	@if (!empty($events))
 		<div class="event">
 			<div class="row">
 				<div class="col-sm-6">
