@@ -88,6 +88,7 @@ class HolidayController extends BaseController
         # Step 3
         if($validator->fails()) {
             return Redirect::to('/events/create')
+                ->with('date_entered', $_POST['date'])
                 ->with('flash_message', 'You really messed up!')
                 ->withInput()
                 ->withErrors($validator);

@@ -19,7 +19,9 @@
 		{{ Form::text('location') }}
 		<br>
 		{{ Form::label('date')}}
-		<input type="text" id="validDefaultDatepicker" size="30" name="date">
+		<?php $date_entered= Session::get('date_entered'); ?>
+		<input type="text" id="validDefaultDatepicker" size="30" name="date" 
+		<?php if (isset($date_entered)) echo 'value="' . $date_entered . '"'; ?> >
 		<br>
 
 		{{Form::label('time')}}
