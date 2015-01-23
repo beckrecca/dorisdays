@@ -162,13 +162,22 @@ class Holiday extends Eloquent
         return $upcoming;
     }
 
-    public function sendCreationEmail($event, $user) { 
+    public static function sendCreationEmail($event) { 
         # Create an array of data, which will be passed/available in the view
-        $data = array('event' => $event, '$user' => $user); 
+        $data = array('event' => $event); 
 
         Mail::send('emails.email', $data, function($message) { 
             $subject = "Check out the new event in Dorisdays!";
-            $message->to($user->email)->subject($subject);
+
+            # Get all the users' email addresses
+            $users = User::all();
+            $emails = "";
+            foreach ($users as $user) {
+                $emails .= $user->email . ", ";
+            }
+            # remove the last comma ;)
+            $emails = substr($emails, 0, -2);
+            $message->to($email)->subject($subject);
         });
 
      }

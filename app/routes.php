@@ -64,14 +64,19 @@ Route::get('logout', 'UserController@logout');
 
 # TESTING
 
-Route::get('/emails', function() 
-{
-    $emails = User::email_addresses();
-    foreach ($emails as $email) echo $email . "<br>";
-});
-
 Route::get('whoops', function() {
     return View::make('whoops');
+});
+
+Route::get('emails', function() {
+    $users = User::all();
+    $emails = "";
+    foreach ($users as $user) {
+        $emails .= $user->email . ", ";
+    }
+    # remove the last comma ;)
+    $emails = substr($emails, 0, -2);
+    echo $emails;
 });
 
 Route::get('mysql-test', function() {
