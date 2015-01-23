@@ -64,6 +64,12 @@ Route::get('logout', 'UserController@logout');
 
 # TESTING
 
+Route::get('/emails', function() 
+{
+    $emails = User::email_addresses();
+    foreach ($emails as $email) echo $email . "<br>";
+});
+
 Route::get('whoops', function() {
     return View::make('whoops');
 });

@@ -54,7 +54,7 @@ return array(
 	|
 	*/
 
-	'from' => array('address' => null, 'name' => null),
+	'from' => array('address' => 'dorismail@beckrecca.me', 'name' => 'Dorisdays'),
 
 	/*
 	|--------------------------------------------------------------------------
@@ -80,7 +80,7 @@ return array(
 	|
 	*/
 
-	'username' => null,
+	'username' => 'postmaster@sandboxe5074fc2dd524407b0705b2d05f1bf9a.mailgun.org',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -93,7 +93,7 @@ return array(
 	|
 	*/
 
-	'password' => null,
+	'password' => 'bd1bd109f5e1dc8915e1f2c5ad016f71',
 
 	/*
 	|--------------------------------------------------------------------------
