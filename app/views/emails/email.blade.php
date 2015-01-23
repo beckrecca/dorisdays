@@ -1,4 +1,4 @@
-<h1>There is a new event in Dorisdays!</h1>
+<h2>There is a new event in Dorisdays!</h2>
 
 <label>Where:</label> {{ $event['location'] }} <br>
 <label>When:</label> <?php $date = date_create($event['when']); ?>
