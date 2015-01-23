@@ -69,14 +69,8 @@ Route::get('whoops', function() {
 });
 
 Route::get('emails', function() {
-    $users = User::all();
-    $emails = "";
-    foreach ($users as $user) {
-        $emails .= $user->email . ", ";
-    }
-    # remove the last comma ;)
-    $emails = substr($emails, 0, -2);
-    echo $emails;
+    $emails = User::users_email_addresses();
+    print_r($emails);
 });
 
 Route::get('mysql-test', function() {

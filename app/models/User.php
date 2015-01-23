@@ -128,4 +128,17 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
         return $user_bdays;
 	}
 
+    public static function users_email_addresses() {
+        $users = User::all();
+        $emails = Array();
+        $i = 0;
+
+        foreach($users as $user) {
+            $emails[$i] = $user->email;
+            $i++;
+        }
+
+        return $emails;
+    }
+
 }

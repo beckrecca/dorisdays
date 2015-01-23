@@ -113,7 +113,10 @@ class HolidayController extends BaseController
         $event->save();
 
         # Send email notification
-        Holiday::sendCreationEmail($event);
+        $users = User::all();
+        foreach ($users as $user) {
+            Holiday::sendCreationEmail($event, $user);
+        }
 
         # Redirect
         $redirect = "/events/view/" . $event->id;

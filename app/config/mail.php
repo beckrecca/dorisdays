@@ -54,7 +54,7 @@ return array(
 	|
 	*/
 
-	'from' => array('address' => 'dorismail@beckrecca.me', 'name' => 'Dorisdays'),
+	'from' => array('address' => 'dorisfamilybot@gmail.com', 'name' => 'Dorisdays'),
 
 	/*
 	|--------------------------------------------------------------------------
