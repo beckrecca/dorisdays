@@ -1,14 +1,20 @@
-@if (Session::has('error'))
-  {{ trans(Session::get('reason')) }}
-@elseif (Session::has('success'))
-  An email with the password reset has been sent.
-@endif
- 
-{{ Form::open(array('route' => 'password.request')) }}
+@extends('_master')
+
+@section('title')
+	| Password Help
+@stop
+
+@section('content')
+<h3>Forget your password?</h3>
+
+<p>Submit your email, and you will be sent a link to reset it.</p>
+
+{{ Form::open(array('action' => 'RemindersController@postRemind')) }}
  
   <p>{{ Form::label('email', 'Email') }}
   {{ Form::text('email') }}</p>
  
-  <p>{{ Form::submit('Submit') }}</p>
+  <p>{{ Form::submit('Submit', array('class' => 'btn btn-default')) }}</p>
  
 {{ Form::close() }}
+@stop

@@ -99,3 +99,6 @@ select {
     background-color: #BBDAC3;
     border: 1px #E7E7E7 solid;
 }
+#password-remind {
+    margin: 2em 2em 2em 2em;
+}
