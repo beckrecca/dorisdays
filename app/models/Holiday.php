@@ -15,10 +15,16 @@ class Holiday extends Eloquent
         return $this->belongsTo('User');
     }
 
-    # Scope method for ordering the display of all the events
+    # Scope method for ordering the display of upcoming events
     public function scopeWhenAscending($query)
     {
         return $query->orderBy('when','ASC');
+    } 
+
+    # Scope method for ordering the display of all events
+    public function scopeWhenDescending($query)
+    {
+        return $query->orderBy('when','DESC');
     } 
 
     # Turn the datetime entry into something we can actually use

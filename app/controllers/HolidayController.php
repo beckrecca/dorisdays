@@ -28,7 +28,7 @@ class HolidayController extends BaseController
     public function all()
     {
         // Show all the events. 
-        $events = Holiday::whenAscending()->Paginate(5);
+        $events = Holiday::whenDescending()->Paginate(5);
         $header = $title = " All Events";
         $user = Auth::id();
         return View::make('index')->with('events', $events)

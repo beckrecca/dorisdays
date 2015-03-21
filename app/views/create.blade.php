@@ -35,6 +35,8 @@
 		{{ Form::label('description')}} <br>
 		{{ Form::textarea('description', null, ['size' => '30x4']) }}
 		<br>
+		<span id="charcount"></span>
+		<br>
 		{{ Form::submit('Submit', array('class' => 'btn btn-default')); }}
 
 	{{ Form::close() }}
@@ -47,5 +49,6 @@
     $("#validDefaultDatepicker").datepicker({dateFormat: 'yy-mm-dd'});
   });
 </script>
+<script type="text/javascript" src="../js/char_count_desc.js"></script>
 
 @stop

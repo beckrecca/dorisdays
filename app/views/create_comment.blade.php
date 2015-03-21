@@ -43,6 +43,7 @@
 
 			{{ Form::label('text' )}} (Limit 160 characters) <br>
 			{{ Form::textarea('text', null, ['size' => '30x4']) }}
+			<br><span id="charcount"></span>
 
 			<input type="hidden" name="holiday_id" value="{{ $event['id'] }}" />
 
@@ -70,5 +71,10 @@
 			</div>
 		@endforeach
 	</div>
+
+@stop
+
+@section('/body')
+<script type="text/javascript" src="../js/char_count_comment.js"></script>
 
 @stop
